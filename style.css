@@ -1,0 +1,181 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Setting default font family to Poppins */
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Styling for the body */
+body {
+    /* Centering content vertically and horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Setting minimum height to full viewport height */
+    min-height: 100vh;
+    /* Setting background color */
+    background: #000;
+    /* Hiding overflow to prevent scrolling */
+    overflow: hidden;
+}
+
+/* Styling for the login box */
+.login-box {
+    /* Positioning relative to its container */
+    position: relative;
+    /* Setting width and height */
+    width: 400px;
+    height: 450px;
+    /* Setting background color */
+    background: #191919;
+    /* Adding border radius for rounded corners */
+    border-radius: 20px;
+    /* Centering content vertically and horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    /* Setting font size */
+    font-size: 2em;
+    /* Setting text color */
+    color: #fff;
+    /* Centering text */
+    text-align: center;
+    /* Adding transition effect */
+    transition: .5s ease;
+}
+
+.input-box {
+    /* Positioning relative to its container */
+    position: relative;
+    /* Setting width */
+    width: 310px;
+    /* Adding margin */
+    margin: 30px 0;
+}
+
+/* Styling for the line beneath the input */
+.input-box .input-line {
+    /* Positioning absolute at the bottom */
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    /* Setting width and height */
+    width: 100%;
+    height: 2.5px;
+    /* Setting background color */
+    background: #fff;
+    /* Adding transition effect */
+    transition: .5s ease;
+}
+
+.input-box label {
+    /* Positioning absolute at the top left */
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    /* Translating label upwards by 50% of its own height */
+    transform: translateY(-50%);
+    /* Setting font size */
+    font-size: 1em;
+    /* Setting text color */
+    color: #fff;
+    /* Disabling pointer events */
+    pointer-events: none;
+    /* Adding transition effect */
+    transition: .5s ease;
+}
+
+/* Styling for the label above the input when the input is focused or has content */
+.input-box input:focus~label,
+.input-box input:valid~label {
+    /* Moving label upwards */
+    top: -5px;
+}
+
+.input-box input {
+    /* Setting width and height */
+    width: 100%;
+    height: 50px;
+    /* Making background transparent */
+    background: transparent;
+    /* Removing borders and outlines */
+    border: none;
+    outline: none;
+    /* Setting font size and text color */
+    font-size: 1em;
+    color: #fff;
+    /* Adding padding */
+    padding: 0 35px 0 5px;
+    /* Adding transition effect */
+    transition: .5s ease;
+}
+
+.input-box .icon {
+    /* Positioning absolute to the right */
+    position: absolute;
+    right: 8px;
+    /* Setting text color and size */
+    color: #fff;
+    font-size: 1.2em;
+    /* Setting line height */
+    line-height: 57px;
+    /* Adding transition effect */
+    transition: .5s ease;
+}
+
+/* Styling for icons within the input-box when the input-check is checked */
+.input-check:checked~.input-box .icon {
+    /* Changing text color */
+    color: #00f7ff;
+    /* Adding drop shadow for effect */
+    filter: drop-shadow(0 0 5px #00f7ff);
+}
+
+button {
+    /* Setting width, height, background color, and border */
+    width: 100%;
+    height: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    /* Adding border radius for rounded corners */
+    border-radius: 40px;
+    /* Changing cursor to pointer */
+    cursor: pointer;
+    /* Setting font size, text color, and font weight */
+    font-size: 1em;
+    color: #191919;
+    font-weight: 500;
+    /* Adding transition effect */
+    transition: .5s ease;
+}
+/* Ensure the feedback element is placed below the button */
+#feedback {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+#feedback {
+    margin-top: 15px;  /* Space between the button and the feedback */
+    font-size: 14px;   /* Size of the feedback text */
+    text-align: center;  /* Center the feedback text */
+    visibility: hidden; /* Initially hide feedback */
+}
+
+#feedback.green {
+    color: green;
+    visibility: visible; /* Make visible when correct credentials */
+}
+
+#feedback.red {
+    color: red;
+    visibility: visible; /* Make visible when incorrect credentials */
+}
